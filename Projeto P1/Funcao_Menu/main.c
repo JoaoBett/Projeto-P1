@@ -11,20 +11,22 @@ char menu()
     printf("\nPortateis disponiveis: %d\t\t\t\t\tNumero de requisicoes ativas: %d");
     printf("\n\n[A]Adicionar Portatil");
     printf("\n[B]Listar Portateis");
-    printf("\n[C]Alterar localização do Portátil.");
-    printf("\n[D]Devolução do Portátil");
-    printf("\n[E]Renovar Requisição");
+    printf("\n[C]Alterar localizaÃ§Ã£o do PortÃ¡til.");
+    printf("\n[D]DevoluÃ§Ã£o do PortÃ¡til");
+    printf("\n[E]Renovar RequisiÃ§Ã£o");
     printf("\n[F]Registar Avaria");
-    printf("\n[G]Estado do Portátil");
-    printf("\n[H]Média de multa");
-    printf("\n[I]Média de cada processador utilizado");
-    printf("\n[J]Tipos de utentes com menor quantidade de requisições");
-    printf("\n[K]Devoluções mais Recentes");
+    printf("\n[G]Estado do PortÃ¡til");
+    printf("\n[H]MÃ©dia de multa");
+    printf("\n[I]MÃ©dia de cada processador utilizado");
+    printf("\n[J]Tipos de utentes com menor quantidade de requisiÃ§Ãµes");
+    printf("\n[K]DevoluÃ§Ãµes mais Recentes");
     printf("\n[L]Todas as avarias");
     printf("\nOpcao >> ");
     scanf(" %c", &op);
     return op;
 }
+
+//sadsdasd
 
 int main(){
     menu();
