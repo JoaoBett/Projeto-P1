@@ -4,6 +4,7 @@
 #include <locale.h>
 #include <string.h>
 #include <ctype.h>
+#include "menu.h"
 
 //defines
 #define valorMulta 10
@@ -71,7 +72,7 @@ int main()
     char op;
     do
     {
-        op = menu();
+        op = menu(MAX_PORTATIL,);       //Falta colocar o numero de Requisoções, numero de portateis disponiveis e numero de requisçoes ativas
         switch(op)
         {
         case 'A':
@@ -112,7 +113,7 @@ int main()
     return 0;
 }
 
-char menu()
+/*char menu()
 {
 
     char op;
@@ -138,7 +139,7 @@ char menu()
     scanf(" %c", &op);
     op = toupper(op);
     return op;
-}
+}*/
 
 void lerProcessador(char processador[2]){
     char op;
