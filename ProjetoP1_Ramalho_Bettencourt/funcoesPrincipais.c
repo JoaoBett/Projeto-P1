@@ -398,7 +398,7 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS],int quantidade){
     processadorI3 = (contadorI3/qnt)*100;
     processadorI5 = (contadorI5/qnt)*100;
     processadorI7 = (contadorI7/qnt)*100;
-    printf("A percentagem de processadores I3 presentes é de %f.\n",processadorI3);
+    printf("\nA percentagem de processadores I3 presentes é de %f.\n",processadorI3);
     printf("A percentagem de processadores I5 presentes é de %f.\n",processadorI5);
     printf("A percentagem de processadores I7 presentes é de %f.\n",processadorI7);
 

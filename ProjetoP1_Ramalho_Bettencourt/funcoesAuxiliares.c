@@ -10,6 +10,7 @@
 char menu(int *quantidadePortateis, int *portateisDisponiveis, int *quantidadeRequisicoes, int *quantidadeRequisicoesAtivas)
 {
     char op;
+    limpaEcra();
     printf("================================================| Bem vindo |===========================================================\n");
     printf("============================| GRCP |  Gestao da Requisicao de Computadores Portateis |==================================\n");
     printf("========================================================================================================================\n");
