@@ -17,8 +17,8 @@ tipoPc infoPc()
     pc.estado = lerInteiro("Estado (0 - Disponivel || 1 - Em Uso || 2 - Avariado)\t", 0, 2);
     pc.localizacao = lerInteiro("Localizacao (0 - Residencias || 1 - Campus 1 || 2 - Campus 2 || 3 - Campus 5)\t",0,3);
     pc.valor = lerFloat("Valor (500€-2000€) ",500,2000);
-    pc.quantAvarias = lerInteiro("Avarias : \t",0,999);
-    pc.quantRequisicoes = lerInteiro("Requisicoes efetuadas : \t",0,999);
+    //pc.quantAvarias = lerInteiro("Avarias : \t",0,999);
+    //pc.quantRequisicoes = lerInteiro("Requisicoes efetuadas : \t",0,999);
     pc.tipoUtente = lerInteiro("Utente (0 - Estudante || 1 - Docente || 2 - Tecnico administrativo)\t",0,2);
     //prazo de requisicao ainda por fazer
 
@@ -170,7 +170,7 @@ void listarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade)               
 void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisicao arrayReq[MAX_PORTATIL], int *contadorReq)
 {
     int idPortatil=0,posicao=0;
-    if((*quantidade) < 1)
+    if((quantidade) < 1)
     {
         printf("Não existem informações sobre os portáteis.");
     }
@@ -178,12 +178,9 @@ void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisi
     {
         printf("Digite a identificação do portátil.\n");scanf("%d", &idPortatil);
 
-        posicao = procurarPortatil(arrayPC,*quantidade,idPortatil);
-
+        posicao = procurarPortatil(arrayPC,quantidade,idPortatil);
         if(posicao==0){
-            printf("O portatil nao existe...confirme o id");
-        }else{
-        printf("Digite a data da requisicao.\n");
+            printf("Digite a data da requisicao.\n");
 
         arrayReq->dataRequisicao = lerData();
 
@@ -192,6 +189,9 @@ void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisi
             arrayPC[i].estado;
         }
         printf("\nApós 30 dias da requisicao do portatil irá ser cobrada uma multa de 10 euros por dia em excesso.\n");
+        }else{
+        printf("O portatil nao existe...confirme o id");
+
      }
     }
     pressionarContinuar();
@@ -277,7 +277,7 @@ void registarAvaria(tipoPc arrayPc[MAX_PORTATEIS], int quantidade){
 
         if (posicao != -1)
         {
-            arrayPc->tipoAvarias=lerInteiro("Indique o tipo da avaria (0-temporaria, 1-permanente): ",0,9999);
+            arrayPc->tipoAvarias=lerInteiro("Indique o tipo da avaria (0-temporaria, 1-permanente): ",0,1);
 
             arrayPc->quantAvarias++;
             printf("\n\tA avaria foi registada...\n\n");
@@ -301,13 +301,13 @@ void listarAvaria(tipoPc arrayPc[MAX_PORTATEIS], int quantidade){
         printf("Listagem Avarias: \n");
         for (i = 0; i<quantidade ; i++){
             quantidadeAvarias = quantidadeAvarias + arrayPc[i].quantAvarias;
-        printf("O portatil %d", arrayPc[i].id);printf("tem(teve): %d avarias", arrayPc[i].quantAvarias);
+        printf("O portatil %d tem(teve) %d avarias", arrayPc[i].id,arrayPc[i].quantAvarias);
         switch(arrayPc[i].tipoAvarias){
             case 0:
-                printf("do tipo temporaria");
+                printf(" do tipo temporaria");
                 break;
             case 1:
-                printf("do tipo permanente");
+                printf(" do tipo permanente");
                 break;
             default:
                 break;
@@ -315,7 +315,7 @@ void listarAvaria(tipoPc arrayPc[MAX_PORTATEIS], int quantidade){
         }
     }
 
-    printf("Avarias totais: %d\n", quantidadeAvarias);
+    printf("\nAvarias totais: %d\n", quantidadeAvarias);
     pressionarContinuar();
 }
 
@@ -325,7 +325,7 @@ void registarReparacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisic
 
     if (quantidade < 1)
     {
-        printf("\nÉ impossível renovar a requisicao dos portáteis se eles não existem...");
+        printf("\nÉ impossível a reparacao dos portáteis se eles não existem...");
     }
     else
     {
@@ -335,7 +335,7 @@ void registarReparacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisic
         {
             arrayPc[posicao].estado = 0;
 
-            printf("\n\tA renovacao foi concluida...\n\n");
+            printf("\n\tA reparacao foi concluida...\n\n");
         }
         else
         {
@@ -435,9 +435,9 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS],int quantidade){
     processadorI3 = (contadorI3/qnt)*100;
     processadorI5 = (contadorI5/qnt)*100;
     processadorI7 = (contadorI7/qnt)*100;
-    printf("\nA percentagem de processadores I3 presentes é de %f.\n",processadorI3);
-    printf("A percentagem de processadores I5 presentes é de %f.\n",processadorI5);
-    printf("A percentagem de processadores I7 presentes é de %f.\n",processadorI7);
+    printf("\nA percentagem de processadores I3 presentes é de %.2f.\n",processadorI3);
+    printf("A percentagem de processadores I5 presentes é de %.2f.\n",processadorI5);
+    printf("A percentagem de processadores I7 presentes é de %.2f.\n",processadorI7);
 
     for (i = 0;i<MAX_PORTATEIS; i++)
     {
