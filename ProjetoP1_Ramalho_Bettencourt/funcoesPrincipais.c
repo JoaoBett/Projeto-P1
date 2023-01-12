@@ -433,7 +433,6 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
 
     menorUtente = 0;
     if (contadorDoc == contadorEst && contadorDoc == contadorTecA) {
-        menorUtente = menor/qnt2;
         menorAux = 6;
     }
     else
@@ -441,7 +440,6 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
         if (contadorDoc == contadorEst)
         {
         contadorDoc = menor;
-        menorUtente = menor/qnt2;
         menorAux = 3;
         }
         else
@@ -449,14 +447,12 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
             if (contadorDoc == contadorTecA)
             {
             contadorDoc = menor;
-            menorUtente = menor/qnt2;
             menorAux = 5;
             }
             else{
                 if(contadorEst == contadorTecA)
                 {
                     contadorEst = menor;
-                    menorUtente = menor/qnt2;
                     menorAux = 4;
                 }
             }
