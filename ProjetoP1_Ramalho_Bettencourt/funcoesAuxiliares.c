@@ -84,71 +84,6 @@ int procurarRequisicao(tipoPc arrayPc[MAX_PORTATIL], tipoRequisicao arrayReq[MAX
 
     return posicao; //devolve a posicao do portatil
 }
-/*//FUNCAO QUE LE O PROCESSADOR
-int lerProcessador(){
-    char opProcessador;
-    do{
-    printf("\nIndique o processador:");
-    printf("\n[1] I3");
-    printf("\n[2] I5");
-    printf("\n[3] I7");
-    printf("\n\tOPCAO >> ");scanf("%d", &opProcessador);
-    if(opProcessador != 1 && opProcessador != 2 && opProcessador != 3)
-        printf("\nERRO | OPCAO INVALIDA\n");
-    }while (opProcessador != 1 && opProcessador != 2 && opProcessador != 3);
-
-    return opProcessador;
-
-}
-//FUNCAO QUE LE O ESTADO DO PORTATIL
-int lerEstado(){
-    char opEstado;
-    do{
-    printf("\nIndique o estado do portatil:");
-    printf("\n[1] Disponivel");
-    printf("\n[2] Requesitado");
-    printf("\n[3] Avariado");
-    printf("\n\tOPCAO >> ");scanf("%d", &opEstado);
-    if(opEstado != 1 && opEstado != 2 && opEstado != 3)
-        printf("\nERRO | OPCAO INVALIDA\n");
-    }while (opEstado != 1 && opEstado != 2 && opEstado != 3);
-
-    switch(opEstado){
-        case 1: opEstado = 1;
-            break;
-        case 2: opEstado = 2;
-            break;
-        case 3: opEstado = 3;
-            break;
-    }
-
-    return opEstado;
-}
-//FUNCAO QUE LE A LOCALIZACAO
-int lerLocalizacao(){
-    char opLocalizacao;
-    do{
-    printf("\nIndique a localizacao:");
-    printf("\n[1] Residências");
-    printf("\n[2] Campus1");
-    printf("\n[3] Campus2");
-    printf("\n[3] Campus5");
-    printf("\n\tOPCAO >> ");scanf("%d", &opLocalizacao);
-    if(opLocalizacao != 1 && opLocalizacao != 2 && opLocalizacao != 3)
-        printf("\nERRO | OPCAO INVALIDA\n");
-    }while (opLocalizacao != 1 && opLocalizacao != 2 && opLocalizacao != 3);
-
-    switch(opLocalizacao){
-        case 1: opLocalizacao = 1;
-            break;
-        case 2: opLocalizacao = 2;
-            break;
-        case 4: opLocalizacao = 4;
-            break;
-    }
-
-    return opLocalizacao;
-}*/
 //FUNCAO LIMPAR BUFFER
 void limpaBufferStdin(void)
 {
@@ -288,28 +223,9 @@ void pressionarContinuar()
     printf("\nPressione qualquer tecla para continuar...");
     while (!kbhit()) {}
     limpaBufferStdin();
-    return;
 }
 
 void limpaEcra()
 {
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-}
-
-int verificaMenor(int primeira,int segunda, int terceira)
-{
-    int menor = primeira;
-    if(segunda < primeira)
-    {
-        menor = segunda;
-    }
-    if(terceira < primeira)
-    {
-        menor = terceira;
-    }
-    if(primeira == segunda)
-    {
-
-    }
-    return menor;
 }
