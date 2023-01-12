@@ -2,7 +2,6 @@
 #define CONSTANTES_H
 
 #define MAX_PORTATIL 30
-#define MAX_PORTATEIS 30
 #define MAX_STRING 80
 #define MAX_ID_PORTATIL 1
 #define MIN_ID_PORTATIL 9999

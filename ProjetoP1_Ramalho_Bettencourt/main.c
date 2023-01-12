@@ -15,8 +15,8 @@ int main()
     int quantidadeAvarias = 0;
     int reqAtivas = 0;
 
-    tipoPc portateis[MAX_PORTATEIS];
-    tipoRequisicao arrayReq[MAX_PORTATEIS];
+    tipoPc portateis[MAX_PORTATIL];
+    tipoRequisicao arrayReq[MAX_PORTATIL];
 
     setlocale(LC_ALL,"");
 
