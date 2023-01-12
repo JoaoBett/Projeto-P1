@@ -68,6 +68,7 @@ int main()
             break;
         default:
             printf("ERRO | OPCAO INVALIDA\n");
+            pressionarContinuar();
         }
     }while(op != 'S');
 }
