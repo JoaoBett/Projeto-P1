@@ -4,7 +4,7 @@
 #include "funcoesPrincipais.h"
 
 void gravarFicheiroBinario(tipoPc portateis[MAX_PORTATIL], int quantidadePortateis, tipoRequisicao* requisicao, int quantidadeRequisicoes) {
-    FILE *f;
+    FILE *file;
 
     file = fopen("dados.dat", "wb");
 
@@ -28,7 +28,7 @@ int leFicheiroBinario(tipoPc arrayPc[])
     if(ficheiro_portateis != NULL)
     {
         lido = fread(&tamanho, sizeof(int),1,ficheiro_portateis);
-        lido = fread(arrayPc,sizeof(tipoPc),,ficheiro_portateis)
+        lido = fread(arrayPc,sizeof(tipoPc),30,ficheiro_portateis);
         if(lido!=1)
         {
             printf("ERRO NA LEITURA DA QUANTIDADE DE ESTUDANTES");
