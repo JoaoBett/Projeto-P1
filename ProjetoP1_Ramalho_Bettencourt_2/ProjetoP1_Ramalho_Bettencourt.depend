@@ -60,7 +60,7 @@
 
 1673482570 c:\app\escola\programação\projeto_01\projetop1_ramalho_bettencourt\ficheiros.h
 
-1673482594 source:c:\users\guilh\documents\github\projeto-p1\projetop1_ramalho_bettencourt_2\ficheiros.c
+1673491037 source:c:\users\guilh\documents\github\projeto-p1\projetop1_ramalho_bettencourt_2\ficheiros.c
 	<stdlib.h>
 	<stdio.h>
 	"funcoesPrincipais.h"
@@ -86,7 +86,7 @@
 	"estruturas.h"
 	"constantes.h"
 
-1673490556 source:c:\users\guilh\documents\github\projeto-p1\projetop1_ramalho_bettencourt_2\main.c
+1673490683 source:c:\users\guilh\documents\github\projeto-p1\projetop1_ramalho_bettencourt_2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funcoesAuxiliares.h"

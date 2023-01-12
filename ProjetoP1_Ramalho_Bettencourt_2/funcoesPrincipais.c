@@ -192,7 +192,9 @@ void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisi
         arrayReq->dataRequisicao = lerData();
 
         *contadorReq++;
-
+        for (int i = 0; i<5 ; i++){
+            arrayPC[i].estado;
+        }
         printf("\nApós 30 dias da requisicao do portatil irá ser cobrada uma multa de 10 euros por dia em excesso.\n");
     }
 //    pressionarContinuar();
@@ -201,7 +203,8 @@ void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisi
 void renovarPortatil(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisicao arrayReq[MAX_PORTATIL])
 {
     int posicao =-1;
-
+    int i=0;
+    int idPortatil=0;
     if (quantidade < 1)
     {
         printf("\nÉ impossível renovar a requisicao dos portáteis se eles não existem...");
@@ -219,6 +222,7 @@ void renovarPortatil(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisicao
         else
         {
             printf("\n\tEste portátil não existe...\n\n");
+            break;
         }
     }
  //   pressionarContinuar();
@@ -226,7 +230,7 @@ void renovarPortatil(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisicao
 
 void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
 
-    int idPortatil=0,posicao=0;
+    int idPortatil=0,posicao=0, i=0;
     if((quantidade) < 1)
     {
         printf("Não existem informações sobre os portáteis.");
@@ -235,11 +239,20 @@ void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
     {
         printf("Digite a identificação do portátil.\n");
         scanf("%d", &idPortatil);
-        posicao = procurarPortatil(arrayPc,quantidade,idPortatil+1);
+        for (i=0; i<MAX_PORTATIL; i++){
+          if(idPortatil == arrayPc[i].id){
+            posicao = procurarPortatil(arrayPc,quantidade,idPortatil);
+            printf("Mude a localizacão: ");
+            arrayPc->localizacao = lerInteiro("Localizacao (0 - Residencias || 1 - Campus 1 || 2 - Campus 2 || 3 - Campus 5)\t",0,3);
+          }else{
+            printf("O id indicado nao corresponde a nenhum portatil...");
+          }
+        }
+        //posicao = procurarPortatil(arrayPc,quantidade,idPortatil);
 
-        printf("Mude a localizacão: ");
+        //printf("Mude a localizacão: ");
 
-        arrayPc->localizacao = lerInteiro("Localizacao (0 - Residencias || 1 - Campus 1 || 2 - Campus 2 || 3 - Campus 5)\t",0,3);;
+        //arrayPc->localizacao = lerInteiro("Localizacao (0 - Residencias || 1 - Campus 1 || 2 - Campus 2 || 3 - Campus 5)\t",0,3);
 
     }
 
@@ -321,7 +334,7 @@ void registarReparacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisic
 
     if (quantidade < 1)
     {
-        printf("\nÉ impossível renovar a requisicao dos portáteis se eles não existem...");
+        printf("\nÉ impossível a reparacao dos portáteis se eles não existem...");
     }
     else
     {
@@ -331,7 +344,7 @@ void registarReparacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisic
         {
             arrayPc[posicao].estado = 0;
 
-            printf("\n\tA renovacao foi concluida...\n\n");
+            printf("\n\tA reparacao foi concluida...\n\n");
         }
         else
         {
