@@ -20,6 +20,7 @@ int main()
 
     do{
       op = menu(&quantidadePortateis, &portateisDisponiveis, &quantidadeRequesicoes, &quantidadeRequesicoesAtivas);
+      limpaBufferStdin();
         switch(op){
         case 'A'://adicionar portatil
             adicionarPortatil(portateis,&quantidadePortateis);
