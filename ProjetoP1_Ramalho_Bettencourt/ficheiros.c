@@ -1,11 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <locale.h>
 
 #include "funcoesPrincipais.h"
 
 void gravarFicheiroBinario(tipoPc portateis[MAX_PORTATIL], int quantidadePortateis, tipoRequisicao* requisicao, int quantidadeRequisicoes) {
-    FILE *file;
+    FILE *f;
 
     file = fopen("dados.dat", "wb");
 
@@ -20,27 +19,29 @@ void gravarFicheiroBinario(tipoPc portateis[MAX_PORTATIL], int quantidadePortate
     }
 }
 
-int leFicheiroBinario(tipoPc vetorPc[])
+int leFicheiroBinario(tipoPc arrayPc[])
 {
-    FILE *f;
+    FILE *ficheiro_portateis;
     int tamanho, lido;
-    f=fopen("dados.dat", "rb");
-    if(f!=NULL)
+    ficheiro_portateis = fopen("dados.dat", "rb");
+
+    if(ficheiro_portateis != NULL)
     {
-        lido=fread(&tamanho, sizeof(int), 1,f);
+        lido = fread(&tamanho, sizeof(int),1,ficheiro_portateis);
+        lido = fread(arrayPc,sizeof(tipoPc),,ficheiro_portateis)
         if(lido!=1)
         {
             printf("ERRO NA LEITURA DA QUANTIDADE DE ESTUDANTES");
         }
         else
         {
-            lido=fread(vetorPc, sizeof(tipoPc), tamanho, f);
+            lido = fread(arrayPc, sizeof(tipoPc), tamanho, ficheiro_portateis);
             if(lido!=tamanho)
             {
                 printf("ERRO NA LEITURA DE DADOS DO VETOR");
             }
         }
-        fclose(f);
+        fclose(ficheiro_portateis);
     }
     else
     {
