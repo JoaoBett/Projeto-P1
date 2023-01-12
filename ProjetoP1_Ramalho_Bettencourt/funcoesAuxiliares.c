@@ -6,8 +6,6 @@
 #include "funcoesAuxiliares.h"
 #include "estruturas.h"
 
-///NAO ESQUECER FUNCOES PARA LER PROCESSADOR/RAM/LOCALIZACAO/ESTADO
-
 //FUNCAO MENU
 char menu(int *quantidadePortateis, int *portateisDisponiveis, int *quantidadeRequisicoes, int *quantidadeRequisicoesAtivas)
 {
@@ -22,9 +20,9 @@ char menu(int *quantidadePortateis, int *portateisDisponiveis, int *quantidadeRe
     printf("\n\n[A]Adicionar Portatil");
     printf("\n[B]Listar Portateis");
     printf("\n[C]Alterar Localizacao de um portatil");
-    printf("\n[D]Requesitar um Portatil");
+    printf("\n[D]Requisitar um Portatil");
     printf("\n[E]Renovar requisicao de um portatil");
-    printf("\n[F]Listar requesicoes");
+    printf("\n[F]Listar requisicoes");
     printf("\n[G]Informacao de uma requisicao");
     printf("\n[H]Registar Avaria");
     printf("\n[I]Listar Avarias");
@@ -39,8 +37,10 @@ char menu(int *quantidadePortateis, int *portateisDisponiveis, int *quantidadeRe
     op = toupper(op);
     return op;
 }
-//FUNCOES PROCURAR
-int procurarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade, int id)                //Procura o id do portátil no array e retorna a sua posicao
+
+///FUNCOES PROCURAR
+//Procura o id do portátil no array e retorna a sua posicao
+int procurarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade, int id)
 {
     int i;
     int posicao = -1;
@@ -61,7 +61,7 @@ int procurarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade, int id)      
 
     return posicao; //devolve a posicao do portatil
 }
-
+//Procura o id do portatil no array e retorna a sua posicao
 int procurarRequisicao(tipoPc arrayPc[MAX_PORTATIL], tipoRequisicao arrayReq[MAX_PORTATIL],int quantidade, int id)
 {
     int i;
@@ -84,72 +84,9 @@ int procurarRequisicao(tipoPc arrayPc[MAX_PORTATIL], tipoRequisicao arrayReq[MAX
 
     return posicao; //devolve a posicao do portatil
 }
-/*//FUNCAO QUE LE O PROCESSADOR
-int lerProcessador(){
-    char opProcessador;
-    do{
-    printf("\nIndique o processador:");
-    printf("\n[1] I3");
-    printf("\n[2] I5");
-    printf("\n[3] I7");
-    printf("\n\tOPCAO >> ");scanf("%d", &opProcessador);
-    if(opProcessador != 1 && opProcessador != 2 && opProcessador != 3)
-        printf("\nERRO | OPCAO INVALIDA\n");
-    }while (opProcessador != 1 && opProcessador != 2 && opProcessador != 3);
 
-    return opProcessador;
-
-}
-//FUNCAO QUE LE O ESTADO DO PORTATIL
-int lerEstado(){
-    char opEstado;
-    do{
-    printf("\nIndique o estado do portatil:");
-    printf("\n[1] Disponivel");
-    printf("\n[2] Requesitado");
-    printf("\n[3] Avariado");
-    printf("\n\tOPCAO >> ");scanf("%d", &opEstado);
-    if(opEstado != 1 && opEstado != 2 && opEstado != 3)
-        printf("\nERRO | OPCAO INVALIDA\n");
-    }while (opEstado != 1 && opEstado != 2 && opEstado != 3);
-
-    switch(opEstado){
-        case 1: opEstado = 1;
-            break;
-        case 2: opEstado = 2;
-            break;
-        case 3: opEstado = 3;
-            break;
-    }
-
-    return opEstado;
-}
-//FUNCAO QUE LE A LOCALIZACAO
-int lerLocalizacao(){
-    char opLocalizacao;
-    do{
-    printf("\nIndique a localizacao:");
-    printf("\n[1] Residências");
-    printf("\n[2] Campus1");
-    printf("\n[3] Campus2");
-    printf("\n[3] Campus5");
-    printf("\n\tOPCAO >> ");scanf("%d", &opLocalizacao);
-    if(opLocalizacao != 1 && opLocalizacao != 2 && opLocalizacao != 3)
-        printf("\nERRO | OPCAO INVALIDA\n");
-    }while (opLocalizacao != 1 && opLocalizacao != 2 && opLocalizacao != 3);
-
-    switch(opLocalizacao){
-        case 1: opLocalizacao = 1;
-            break;
-        case 2: opLocalizacao = 2;
-            break;
-        case 4: opLocalizacao = 4;
-            break;
-    }
-
-    return opLocalizacao;
-}*/
-//FUNCAO LIMPAR BUFFER
+///FUNCAO LIMPAR BUFFER
+//Limpa caracteres indesejados
 void limpaBufferStdin(void)
 {
     char chr;
@@ -160,7 +97,8 @@ void limpaBufferStdin(void)
     while (chr != '\n' && chr != EOF);
 }
 
-//FUNCAO LER INTEIRO
+///FUNCAO LER INTEIRO
+//Funcao para ler um numero inteiro
 int lerInteiro(char mensagem[MAX_STRING], int minimo, int maximo)
 {
     int numero, controlo;
@@ -188,7 +126,9 @@ int lerInteiro(char mensagem[MAX_STRING], int minimo, int maximo)
 
     return numero;
 }
-//FUNCAO LER FLOAT
+
+///FUNCAO LER FLOAT
+//Funcao para ler um numero com virgula
 float lerFloat(char mensagem[MAX_STRING], float minimo, float maximo)
 {
     float numero;
@@ -288,28 +228,9 @@ void pressionarContinuar()
     printf("\nPressione qualquer tecla para continuar...");
     while (!kbhit()) {}
     limpaBufferStdin();
-    return;
 }
 
 void limpaEcra()
 {
-    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-}
-
-int verificaMenor(int primeira,int segunda, int terceira)
-{
-    int menor = primeira;
-    if(segunda < primeira)
-    {
-        menor = segunda;
-    }
-    if(terceira < primeira)
-    {
-        menor = terceira;
-    }
-    if(primeira == segunda)
-    {
-
-    }
-    return menor;
+    printf("\n\n\n\n\\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 }

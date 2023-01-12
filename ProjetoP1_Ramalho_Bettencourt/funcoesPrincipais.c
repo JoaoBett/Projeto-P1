@@ -16,7 +16,7 @@ tipoPc infoPc()
     pc.ram = lerInteiro("Ram (0 - 4GB || 1 - 8GB || 2 - 16GB || 3 - 32GB || 4 - 64GB)\t",0,4);
     pc.estado = lerInteiro("Estado (0 - Disponivel || 1 - Em Uso || 2 - Avariado)\t", 0, 2);
     pc.localizacao = lerInteiro("Localizacao (0 - Residencias || 1 - Campus 1 || 2 - Campus 2 || 3 - Campus 5)\t",0,3);
-    pc.valor = lerInteiro("Valor (500€-2000€) ",500,2000);
+    pc.valor = lerFloat("Valor (500€-2000€) ",500,2000);
     pc.quantAvarias = lerInteiro("Avarias : \t",0,999);
     pc.quantRequisicoes = lerInteiro("Requisicoes efetuadas : \t",0,999);
     pc.tipoUtente = lerInteiro("Utente (0 - Estudante || 1 - Docente || 2 - Tecnico administrativo)\t",0,2);
@@ -100,6 +100,7 @@ void listarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade)               
                 break;
             case 4:
                 printf("\n\tRAM: 64GB");
+                break;
             }
 
             //Estado do PC
@@ -137,13 +138,13 @@ void listarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade)               
             }
 
             //Valor do PC
-            printf("\nValor : %d",arrayPc[i].valor);
+            printf("\n\tValor : %.2f",arrayPc[i].valor);
 
             //Requisicoes efetuadas
-            printf("\nRequisicoes efetuadas : %d",arrayPc[i].quantRequisicoes);
+            printf("\n\tRequisicoes efetuadas : %d",arrayPc[i].quantRequisicoes);
 
             //Avarias
-            printf("\nQuantidade de avarias: %d",arrayPc[i].quantAvarias);
+            printf("\n\tQuantidade de avarias: %d",arrayPc[i].quantAvarias);
 
             //Tipo de utente
             switch(arrayPc[i].tipoUtente)
@@ -168,8 +169,8 @@ void listarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade)               
 
 void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisicao arrayReq[MAX_PORTATIL], int *contadorReq)
 {
-    int idPortatil=0,posicao=0;
-    if((*quantidade) < 1)
+    int idPortatil=0,posicao=-1;
+    if((*quantidade) <= 0)
     {
         printf("Não existem informações sobre os portáteis.");
     }
@@ -179,7 +180,7 @@ void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisi
 
         posicao = procurarPortatil(arrayPC,*quantidade,idPortatil);
 
-        if(posicao==0){
+        if(posicao == -1){
             printf("O portatil nao existe...confirme o id");
         }
 
@@ -353,7 +354,7 @@ void registarDevolucao(tipoPc arrayPc[MAX_PORTATIL],int quantidade)
     pressionarContinuar();
 }
 
-void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
+void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS],int quantidade){
     int i = 0;
     //Processadores
     int qnt = 0;
@@ -372,6 +373,12 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
     int menorUtente;
     int menorAux;
 
+    if(quantidade == 0)
+    {
+        printf("Não existem dados de portáteis...");
+        pressionarContinuar();
+    }
+    else{
     for (i=0; i<MAX_PORTATEIS; i++){
       qnt++;                               //(0 - i3 || 1 - i5 || 2 - i7)
         if (arrayPc[i].processador == 0){
@@ -433,7 +440,6 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
 
     menorUtente = 0;
     if (contadorDoc == contadorEst && contadorDoc == contadorTecA) {
-        menorUtente = menor/qnt2;
         menorAux = 6;
     }
     else
@@ -441,7 +447,6 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
         if (contadorDoc == contadorEst)
         {
         contadorDoc = menor;
-        menorUtente = menor/qnt2;
         menorAux = 3;
         }
         else
@@ -449,14 +454,12 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
             if (contadorDoc == contadorTecA)
             {
             contadorDoc = menor;
-            menorUtente = menor/qnt2;
             menorAux = 5;
             }
             else{
                 if(contadorEst == contadorTecA)
                 {
                     contadorEst = menor;
-                    menorUtente = menor/qnt2;
                     menorAux = 4;
                 }
             }
@@ -478,5 +481,7 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
             printf("O tipo de utente com a menor quantidade de requisições efetuadas sao os Docentes e Tecnicos Administrativos.");
         case 6:
             printf("O tipo de utente com a menor quantidade de requisições efetuadas são todos.");
+    }
+    pressionarContinuar();
     }
 }
