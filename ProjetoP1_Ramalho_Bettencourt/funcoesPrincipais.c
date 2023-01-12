@@ -169,8 +169,8 @@ void listarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade)               
 
 void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisicao arrayReq[MAX_PORTATIL], int *contadorReq)
 {
-    int idPortatil=0,posicao=0;
-    if((*quantidade) < 1)
+    int idPortatil=0,posicao=-1;
+    if((*quantidade) <= 0)
     {
         printf("Não existem informações sobre os portáteis.");
     }
@@ -180,7 +180,7 @@ void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisi
 
         posicao = procurarPortatil(arrayPC,*quantidade,idPortatil);
 
-        if(posicao==0){
+        if(posicao == -1){
             printf("O portatil nao existe...confirme o id");
         }
 
@@ -354,7 +354,7 @@ void registarDevolucao(tipoPc arrayPc[MAX_PORTATIL],int quantidade)
     pressionarContinuar();
 }
 
-void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
+void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS],int quantidade){
     int i = 0;
     //Processadores
     int qnt = 0;
@@ -373,6 +373,12 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
     int menorUtente;
     int menorAux;
 
+    if(quantidade == 0)
+    {
+        printf("Não existem dados de portáteis...");
+        pressionarContinuar();
+    }
+    else{
     for (i=0; i<MAX_PORTATEIS; i++){
       qnt++;                               //(0 - i3 || 1 - i5 || 2 - i7)
         if (arrayPc[i].processador == 0){
@@ -475,5 +481,7 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
             printf("O tipo de utente com a menor quantidade de requisições efetuadas sao os Docentes e Tecnicos Administrativos.");
         case 6:
             printf("O tipo de utente com a menor quantidade de requisições efetuadas são todos.");
+    }
+    pressionarContinuar();
     }
 }

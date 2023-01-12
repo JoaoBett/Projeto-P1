@@ -8,7 +8,7 @@
 tipoPc infoPc();
 void adicionarPortatil(tipoPc arrayPC[MAX_PORTATIL],int *quantidade);
 void infoPortatil();
-void dadosEstatisticos(tipoPc arrayPC[MAX_PORTATIL]);
+void dadosEstatisticos(tipoPc arrayPC[MAX_PORTATIL],int quantidade);
 void registarDevolucao(tipoPc arrayPc[MAX_PORTATIL],int quantidade);
 void registarAvaria(tipoPc arrayPc[MAX_PORTATIL], int quantidade);
 void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade);

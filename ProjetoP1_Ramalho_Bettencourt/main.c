@@ -61,7 +61,7 @@ int main()
             quantidadeAvarias=leFicheiroBinario(portateis);
             break;
         case 'N'://dados estatisticos
-            dadosEstatisticos(portateis);
+            dadosEstatisticos(portateis,quantidadePortateis);
             break;
         case 'S':// SAIR
             printf("A sair.......");
