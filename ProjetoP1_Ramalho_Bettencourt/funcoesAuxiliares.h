@@ -17,5 +17,6 @@ void lerString(char mensagem[MAX_STRING], char vetorCaracteres[MAX_STRING], int 
 tipoData lerData();
 void limpaBufferStdin(void);
 void pressionarContinuar();
+void limpaEcra();
 
 #endif // FUNCOES_AUXILIARES_H

@@ -44,7 +44,10 @@ int procurarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade, int id)      
     int i;
     int posicao = -1;
     //recebe o id do portatil
-
+    if( id == 0)
+    {
+        id = lerInteiro("Indique o id:",1,9999);
+    }
     //procura o portatil no array e coloca na variavel "posicao"
     for (i=0; i < quantidade; i++)
     {
@@ -80,7 +83,7 @@ int procurarRequisicao(tipoPc arrayPc[MAX_PORTATIL], tipoRequisicao arrayReq[MAX
 
     return posicao; //devolve a posicao do portatil
 }
-//FUNCAO QUE LE O PROCESSADOR
+/*//FUNCAO QUE LE O PROCESSADOR
 int lerProcessador(){
     char opProcessador;
     do{
@@ -144,7 +147,7 @@ int lerLocalizacao(){
     }
 
     return opLocalizacao;
-}
+}*/
 //FUNCAO LIMPAR BUFFER
 void limpaBufferStdin(void)
 {
@@ -285,4 +288,7 @@ void pressionarContinuar()
     limpaBufferStdin();
     return;
 }
-
+void limpaEcra()
+{
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+}
