@@ -150,13 +150,13 @@ void listarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade)               
             switch(arrayPc[i].tipoUtente)
             {
             case 0:
-                printf("\n\tUtente: Estudante");
+                printf("\n\tUtente: Estudante\n");
                 break;
             case 1:
-                printf("\n\tUtente: Docente");
+                printf("\n\tUtente: Docente\n");
                 break;
             case 2:
-                printf("\n\tUtente: Tecnico administrativo");
+                printf("\n\tUtente: Tecnico administrativo\n");
                 break;
             }
             //prazo de requisicao
@@ -167,32 +167,36 @@ void listarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade)               
     pressionarContinuar();
 }
 
-void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisicao arrayReq[MAX_PORTATIL], int *contadorReq)
+void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int *quantidade,tipoRequisicao arrayReq[MAX_PORTATIL], int *contadorReq, int *reqAtivas)
 {
-    int idPortatil=0,posicao=0;
-    if((quantidade) < 1)
+    int idPortatil = 0;
+    int posicao = 0;
+    if(quantidade < 1)
     {
         printf("Não existem informações sobre os portáteis.");
     }
     else
     {
-        printf("Digite a identificação do portátil.\n");scanf("%d", &idPortatil);
+        posicao = procurarPortatil(arrayPC,*quantidade,0);
 
-        posicao = procurarPortatil(arrayPC,quantidade,idPortatil);
-        if(posicao==0){
+        if(posicao!= -1){
             printf("Digite a data da requisicao.\n");
 
-        arrayReq->dataRequisicao = lerData();
+            arrayReq->dataRequisicao = lerData();
 
-        *contadorReq++;
-        for (int i = 0; i<5 ; i++){
-            arrayPC[i].estado;
+            arrayReq->id = arrayPC->id;
+            arrayReq->tipoUtente = arrayPC->tipoUtente;
+
+            arrayReq->estadoRequisicao = lerInteiro("Estado (0 - Disponível || 1 - Requisitado 1 || 2 - Avariado)\t",0,2);
+
+            (*contadorReq)++;
+            (*reqAtivas)++;
+            printf("\nApós 30 dias da requisicao do portatil irá ser cobrada uma multa de 10 euros por dia em excesso.\n");
         }
-        printf("\nApós 30 dias da requisicao do portatil irá ser cobrada uma multa de 10 euros por dia em excesso.\n");
-        }else{
-        printf("O portatil nao existe...confirme o id");
-
-     }
+        else
+        {
+            printf("O portatil nao existe...confirme o id");
+        }
     }
     pressionarContinuar();
 }
@@ -247,20 +251,39 @@ void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
 }
 
 void listarRequisicao(tipoPc arrayPc[MAX_PORTATEIS], tipoRequisicao arrayReq[MAX_PORTATEIS], int quantidade, int quantidadeReq){
-     int i = 0;
+    int i = 0;
     if(quantidade<1)        //Se ainda nao existirem portateis na BD...
     {
-        printf("\nNão existem informações sobre os portáteis!\n");
+        printf("\nNão existem informações sobre requisições!\n");
     }
-    else{
-        for (i = 0; i<5 ; i++){
-                if(arrayPc[i].estado == 1)
-            printf("O portatil %d", arrayPc[i].id); printf("esta requesitado\n");
+    else
+    {
+        printf("\n\tA listar %d Requisições...\n", quantidadeReq);
+        for (; i < quantidadeReq; i++){
+            printf("\n\tDesignacao: %d\n",arrayReq[i].id);
+
+            switch(arrayReq[i].estadoRequisicao)
+            {
+            case 0:
+                printf("\n\tEstado: Disponível\n");
+                break;
+            case 1:
+                printf("\n\tEstado: Requisitado\n");
+                break;
+            case 2:
+                printf("\n\tEstado: Avariado\n");
+                break;
+            }
+
+            printf("\n\tData: %d/%d/%d", arrayReq[i].dataRequisicao.dia,arrayReq[i].dataRequisicao.mes,arrayReq[i].dataRequisicao.ano);
+
         }
 
     }
     pressionarContinuar();
 }
+
+
 
 void registarAvaria(tipoPc arrayPc[MAX_PORTATEIS], int quantidade){
     printf("Registar avaria: ");
@@ -345,7 +368,7 @@ void registarReparacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisic
     pressionarContinuar();
 }
 
-void registarDevolucao(tipoPc arrayPc[MAX_PORTATIL],int quantidade)
+void registarDevolucao(tipoPc arrayPc[MAX_PORTATIL],int quantidade,int *reqAtivas)
 {
     int posicao =-1;
     int localizacao;
@@ -381,6 +404,7 @@ void registarDevolucao(tipoPc arrayPc[MAX_PORTATIL],int quantidade)
                 }
                 arrayPc[posicao].estado = 0;
             }
+        (*reqAtivas)--;
         }
         else
         {
@@ -390,8 +414,8 @@ void registarDevolucao(tipoPc arrayPc[MAX_PORTATIL],int quantidade)
     pressionarContinuar();
 }
 
-void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS],int quantidade){
-    int i = 0;
+void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS],int quantidade, int quantidadeReq){
+int i = 0;
     //Processadores
     int qnt = 0;
     int contadorI3 = 0;
