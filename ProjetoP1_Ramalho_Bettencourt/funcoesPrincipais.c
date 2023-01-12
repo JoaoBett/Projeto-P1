@@ -223,7 +223,7 @@ void renovarPortatil(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisicao
 
 void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
 
-    int idPortatil=0,posicao=0;
+    int idPortatil = 0,posicao = 0;
     if((quantidade) < 1)
     {
         printf("Não existem informações sobre os portáteis.");
@@ -242,7 +242,7 @@ void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
     pressionarContinuar();
 }
 
-void listarRequesicao(tipoPc arrayPc[MAX_PORTATEIS], tipoRequisicao arrayReq[MAX_PORTATEIS], int quantidade, int quantidadeReq){
+void listarRequisicao(tipoPc arrayPc[MAX_PORTATEIS], tipoRequisicao arrayReq[MAX_PORTATEIS], int quantidade, int quantidadeReq){
     int i = 0;
     if(quantidade<1)        //Se ainda nao existirem portateis na BD...
     {
@@ -295,9 +295,8 @@ void listarAvaria(tipoPc arrayPc[MAX_PORTATEIS], int quantidade){
             quantidadeAvarias = quantidadeAvarias + arrayPc[i].quantAvarias;
         printf("O portatil %d", arrayPc[i].id);printf("tem(teve): %d avarias", arrayPc[i].quantAvarias);
         }
+        printf("Avarias totais: %d", quantidadeAvarias);
     }
-
-    printf("Avarias totais: %d", quantidadeAvarias);
     pressionarContinuar();
 }
 
@@ -371,7 +370,7 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS],int quantidade){
     int contadorTecA = 0;
     int menor;
     int menorUtente;
-    int menorAux;
+    int menorAux = 0;
 
     if(quantidade == 0)
     {
@@ -468,19 +467,19 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS],int quantidade){
     switch(menorAux)
     {
         case 0:
-            printf("O tipo de utente com a menor quantidade de requisições efetuadas e o Estudante.");
+            printf("\nO tipo de utente com a menor quantidade de requisições efetuadas e o Estudante.");
         case 1:
-            printf("O tipo de utente com a menor quantidade de requisições efetuadas e o Docente.");
+            printf("\nO tipo de utente com a menor quantidade de requisições efetuadas e o Docente.");
         case 2:
-            printf("O tipo de utente com a menor quantidade de requisições efetuadas e o Tecnico Administrativo.");
+            printf("\nO tipo de utente com a menor quantidade de requisições efetuadas e o Tecnico Administrativo.");
         case 3:
-            printf("O tipo de utente com a menor quantidade de requisições efetuadas sao os Estudantes e Docentes.");
+            printf("\nO tipo de utente com a menor quantidade de requisições efetuadas sao os Estudantes e Docentes.");
         case 4:
-            printf("O tipo de utente com a menor quantidade de requisições efetuadas sao os Estudantes e os Tecnicos Administrativos.");
+            printf("\nO tipo de utente com a menor quantidade de requisições efetuadas sao os Estudantes e os Tecnicos Administrativos.");
         case 5:
-            printf("O tipo de utente com a menor quantidade de requisições efetuadas sao os Docentes e Tecnicos Administrativos.");
+            printf("\nO tipo de utente com a menor quantidade de requisições efetuadas sao os Docentes e Tecnicos Administrativos.");
         case 6:
-            printf("O tipo de utente com a menor quantidade de requisições efetuadas são todos.");
+            printf("\nO tipo de utente com a menor quantidade de requisições efetuadas são todos.");
     }
     pressionarContinuar();
     }

@@ -38,7 +38,7 @@ int main()
             renovarPortatil(portateis,quantidadePortateis,arrayReq);
             break;
         case 'F'://listar requisicoes
-            listarRequesicao(portateis,arrayReq,quantidadePortateis,quantidadeRequesicoes);
+            listarRequisicao(portateis,arrayReq,quantidadePortateis,quantidadeRequesicoes);
             break;
         case 'G'://informacao de uma requisicao
             break;

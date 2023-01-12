@@ -12,7 +12,7 @@ void dadosEstatisticos(tipoPc arrayPC[MAX_PORTATIL],int quantidade);
 void registarDevolucao(tipoPc arrayPc[MAX_PORTATIL],int quantidade);
 void registarAvaria(tipoPc arrayPc[MAX_PORTATIL], int quantidade);
 void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade);
-void listarRequesicao(tipoPc arrayPc[MAX_PORTATEIS], tipoRequisicao arrayReq[MAX_PORTATEIS], int quantidade, int quantidadeReq);
+void listarRequisicao(tipoPc arrayPc[MAX_PORTATEIS], tipoRequisicao arrayReq[MAX_PORTATEIS], int quantidade, int quantidadeReq);
 void listarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade);
 void listarAvaria(tipoPc arrayPc[MAX_PORTATEIS], int quantidade);
 void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisicao arrayReq[MAX_PORTATIL], int *contadorReq);
