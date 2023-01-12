@@ -203,8 +203,6 @@ void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisi
 void renovarPortatil(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisicao arrayReq[MAX_PORTATIL])
 {
     int posicao =-1;
-    int i=0;
-    int idPortatil=0;
     if (quantidade < 1)
     {
         printf("\nÉ impossível renovar a requisicao dos portáteis se eles não existem...");
