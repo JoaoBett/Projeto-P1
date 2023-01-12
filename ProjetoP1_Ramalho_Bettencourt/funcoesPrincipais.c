@@ -179,11 +179,8 @@ void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisi
         printf("Digite a identificação do portátil.\n");scanf("%d", &idPortatil);
 
         posicao = procurarPortatil(arrayPC,*quantidade,idPortatil);
-
         if(posicao==0){
-            printf("O portatil nao existe...confirme o id");
-        }else{
-        printf("Digite a data da requisicao.\n");
+            printf("Digite a data da requisicao.\n");
 
         arrayReq->dataRequisicao = lerData();
 
@@ -192,6 +189,9 @@ void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisi
             arrayPC[i].estado;
         }
         printf("\nApós 30 dias da requisicao do portatil irá ser cobrada uma multa de 10 euros por dia em excesso.\n");
+        }else{
+        printf("O portatil nao existe...confirme o id");
+
      }
     }
     pressionarContinuar();
@@ -234,7 +234,6 @@ void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
     {
         printf("Digite a identificação do portátil.\n");
         scanf("%d", &idPortatil);
-        for (i=0; i<MAX_PORTATIL; i++){
           if(idPortatil == arrayPc[i].id){
             posicao = procurarPortatil(arrayPc,quantidade,idPortatil);
             printf("Mude a localizacão: ");
@@ -242,7 +241,7 @@ void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
           }else{
             printf("O id indicado nao corresponde a nenhum portatil...");
           }
-        }
+
     pressionarContinuar();
 }
 
