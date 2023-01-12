@@ -244,6 +244,7 @@ void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
 
     pressionarContinuar();
 }
+}
 
 void listarRequisicao(tipoPc arrayPc[MAX_PORTATEIS], tipoRequisicao arrayReq[MAX_PORTATEIS], int quantidade, int quantidadeReq){
      int i = 0;
@@ -434,9 +435,9 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS],int quantidade){
     processadorI3 = (contadorI3/qnt)*100;
     processadorI5 = (contadorI5/qnt)*100;
     processadorI7 = (contadorI7/qnt)*100;
-    printf("\nA percentagem de processadores I3 presentes é de %f.\n",processadorI3);
-    printf("A percentagem de processadores I5 presentes é de %f.\n",processadorI5);
-    printf("A percentagem de processadores I7 presentes é de %f.\n",processadorI7);
+    printf("\nA percentagem de processadores I3 presentes é de %.2f\n",processadorI3);
+    printf("A percentagem de processadores I5 presentes é de %.2f\n",processadorI5);
+    printf("A percentagem de processadores I7 presentes é de %.2f\n",processadorI7);
 
     for (i = 0;i<MAX_PORTATEIS; i++)
     {
