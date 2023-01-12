@@ -243,6 +243,7 @@ void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
             printf("O id indicado nao corresponde a nenhum portatil...");
           }
         }
+    }
     pressionarContinuar();
 }
 

@@ -20,6 +20,7 @@ typedef struct{
     int quantAvarias;
     int diasRequi;
     int quantRequisicoes;
+    int tipoAvarias;
 }tipoPc;
 
 typedef struct{
