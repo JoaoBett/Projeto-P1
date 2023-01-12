@@ -13,7 +13,7 @@ void gravarFicheiroBinario(tipoPc portateis[MAX_PORTATIL], int quantidadePortate
             fwrite(portateis, sizeof(tipoPc), quantidadePortateis, file);
             fclose(file);
     } else {
-        printf("\nImpossivel abrir o file ya\n\n");
+        printf("\nImpossivel abrir o ficheiro\n\n");
     }
 }
 

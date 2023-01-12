@@ -16,7 +16,7 @@ tipoPc infoPc()
     pc.ram = lerInteiro("Ram (0 - 4GB || 1 - 8GB || 2 - 16GB || 3 - 32GB || 4 - 64GB)\t",0,4);
     pc.estado = lerInteiro("Estado (0 - Disponivel || 1 - Em Uso || 2 - Avariado)\t", 0, 2);
     pc.localizacao = lerInteiro("Localizacao (0 - Residencias || 1 - Campus 1 || 2 - Campus 2 || 3 - Campus 5)\t",0,3);
-    pc.valor = lerInteiro("Valor (500€-2000€) ",500,2000);
+    pc.valor = lerFloat("Valor (500€-2000€) ",500,2000);
     pc.quantAvarias = lerInteiro("Avarias : \t",0,999);
     pc.quantRequisicoes = lerInteiro("Requisicoes efetuadas : \t",0,999);
     pc.tipoUtente = lerInteiro("Utente (0 - Estudante || 1 - Docente || 2 - Tecnico administrativo)\t",0,2);
@@ -99,6 +99,7 @@ void listarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade)               
                 break;
             case 4:
                 printf("\n\tRAM: 64GB");
+                break;
             }
 
             //Estado do PC
@@ -136,7 +137,7 @@ void listarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade)               
             }
 
             //Valor do PC
-            printf("\nValor : %d",arrayPc[i].valor);
+            printf("\nValor : %.2f",arrayPc[i].valor);
 
             //Requisicoes efetuadas
             printf("\nRequisicoes efetuadas : %d",arrayPc[i].quantRequisicoes);
@@ -251,9 +252,11 @@ void listarRequesicao(tipoPc arrayPc[MAX_PORTATEIS], tipoRequisicao arrayReq[MAX
         printf("\nNão existem informações sobre os portáteis!\n");
     }
     else{
-        for (i = 0; i<quantidadeReq ; i++){
-            printf("O portatil %d", arrayReq[i].id, "esta requesitado\n");
+        for (i = 0; i<5 ; i++){
+                if(arrayPc[i].estado == 1)
+            printf("O portatil %d", arrayPc[i].id); printf("esta requesitado\n");
         }
+
     }
 }
 

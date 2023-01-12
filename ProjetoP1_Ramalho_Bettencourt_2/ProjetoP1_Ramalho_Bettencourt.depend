@@ -60,3 +60,47 @@
 
 1673482570 c:\app\escola\programação\projeto_01\projetop1_ramalho_bettencourt\ficheiros.h
 
+1673482594 source:c:\users\guilh\documents\github\projeto-p1\projetop1_ramalho_bettencourt_2\ficheiros.c
+	<stdlib.h>
+	<stdio.h>
+	"funcoesPrincipais.h"
+
+1673483865 c:\users\guilh\documents\github\projeto-p1\projetop1_ramalho_bettencourt_2\funcoesprincipais.h
+	"estruturas.h"
+	"constantes.h"
+
+1673485477 c:\users\guilh\documents\github\projeto-p1\projetop1_ramalho_bettencourt_2\estruturas.h
+	"constantes.h"
+
+1673370950 c:\users\guilh\documents\github\projeto-p1\projetop1_ramalho_bettencourt_2\constantes.h
+
+1673490415 source:c:\users\guilh\documents\github\projeto-p1\projetop1_ramalho_bettencourt_2\funcoesauxiliares.c
+	<stdlib.h>
+	<ctype.h>
+	<stdio.h>
+	<string.h>
+	"funcoesAuxiliares.h"
+	"estruturas.h"
+
+1673484900 c:\users\guilh\documents\github\projeto-p1\projetop1_ramalho_bettencourt_2\funcoesauxiliares.h
+	"estruturas.h"
+	"constantes.h"
+
+1673490556 source:c:\users\guilh\documents\github\projeto-p1\projetop1_ramalho_bettencourt_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcoesAuxiliares.h"
+	"funcoesPrincipais.h"
+	"ficheiros.h"
+
+1673482570 c:\users\guilh\documents\github\projeto-p1\projetop1_ramalho_bettencourt_2\ficheiros.h
+
+1673490604 source:c:\users\guilh\documents\github\projeto-p1\projetop1_ramalho_bettencourt_2\funcoesprincipais.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<ctype.h>
+	<string.h>
+	"funcoesAuxiliares.h"
+	"funcoesPrincipais.h"
+
