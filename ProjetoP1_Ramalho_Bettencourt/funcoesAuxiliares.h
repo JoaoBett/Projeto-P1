@@ -18,6 +18,5 @@ tipoData lerData();
 void limpaBufferStdin(void);
 void pressionarContinuar();
 void limpaEcra();
-int verificaMenor(int primeira,int segunda, int terceira);
 
 #endif // FUNCOES_AUXILIARES_H
