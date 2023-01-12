@@ -185,8 +185,7 @@ void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisi
 
         if(posicao==0){
             printf("O portatil nao existe...confirme o id");
-        }
-
+        }else{
         printf("Digite a data da requisicao.\n");
 
         arrayReq->dataRequisicao = lerData();
@@ -196,6 +195,7 @@ void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisi
             arrayPC[i].estado;
         }
         printf("\nApós 30 dias da requisicao do portatil irá ser cobrada uma multa de 10 euros por dia em excesso.\n");
+     }
     }
 //    pressionarContinuar();
 }
