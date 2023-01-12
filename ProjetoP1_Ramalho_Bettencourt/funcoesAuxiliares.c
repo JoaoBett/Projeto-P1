@@ -2,12 +2,13 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <locale.h>
 
 #include "funcoesAuxiliares.h"
 #include "estruturas.h"
 
 //FUNCAO MENU
-char menu(int *quantidadePortateis, int *portateisDisponiveis, int *quantidadeRequisicoes, int *quantidadeRequisicoesAtivas)
+char menu(int *quantidadePortateis, int *portateisDisponiveis, int *quantidadeRequisicoes, int *reqAtivas)
 {
     char op;
     limpaEcra();
@@ -17,7 +18,7 @@ char menu(int *quantidadePortateis, int *portateisDisponiveis, int *quantidadeRe
     printf("=============================================| Menu Principal |=========================================================\n");
     printf("========================================================================================================================\n");
     printf("Portateis existentes: %d\t\t\t\t\t\t\tNumero Total de requisicoes efetuadas: %d", *quantidadePortateis, *quantidadeRequisicoes);
-    printf("\nPortateis disponiveis: %d\t\t\t\t\t\t\tNumero de requisicoes ativas: %d", *portateisDisponiveis, *quantidadeRequisicoesAtivas);
+    printf("\nPortateis disponiveis: %d\t\t\t\t\t\t\tNumero de requisicoes ativas: %d", *portateisDisponiveis, *reqAtivas);
     printf("\n\n[A]Adicionar Portatil");
     printf("\n[B]Listar Portateis");
     printf("\n[C]Alterar Localizacao de um portatil");

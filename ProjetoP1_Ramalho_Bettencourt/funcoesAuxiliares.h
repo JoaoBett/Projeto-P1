@@ -4,6 +4,7 @@
 #include "estruturas.h"
 #include "constantes.h"
 
+
 ///PROTOTIPOS
 char menu(int *quantidadePortateis, int *portateisDisponiveis, int *quantidadeRequisicoes, int *quantidadeRequisicoesAtivas);
 int procurarRequisicao(tipoPc arrayPc[MAX_PORTATIL], tipoRequisicao arrayReq[MAX_PORTATIL],int quantidade, int id);
