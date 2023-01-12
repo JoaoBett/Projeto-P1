@@ -3,6 +3,7 @@
 #include <locale.h>
 #include <ctype.h>
 #include <string.h>
+//#include <locale.h>
 
 #include "funcoesAuxiliares.h"
 #include "funcoesPrincipais.h"
@@ -16,7 +17,7 @@ tipoPc infoPc()
     pc.ram = lerInteiro("Ram (0 - 4GB || 1 - 8GB || 2 - 16GB || 3 - 32GB || 4 - 64GB)\t",0,4);
     pc.estado = lerInteiro("Estado (0 - Disponivel || 1 - Em Uso || 2 - Avariado)\t", 0, 2);
     pc.localizacao = lerInteiro("Localizacao (0 - Residencias || 1 - Campus 1 || 2 - Campus 2 || 3 - Campus 5)\t",0,3);
-    pc.valor = lerFloat("Valor (500€-2000€) ",500,2000);
+    pc.valor = lerFloat("Valor (500 € - 2000 €) ",500,2000);
     //pc.quantAvarias = lerInteiro("Avarias : \t",0,999);
     //pc.quantRequisicoes = lerInteiro("Requisicoes efetuadas : \t",0,999);
     pc.tipoUtente = lerInteiro("Utente (0 - Estudante || 1 - Docente || 2 - Tecnico administrativo)\t",0,2);

@@ -104,9 +104,10 @@
 
 1673482772 c:\users\joão bettencourt\desktop\projetop1_ramalho_bettencourt\ficheiros.h
 
-1673543764 source:c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\ficheiros.c
+1673544138 source:c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\ficheiros.c
 	<stdlib.h>
 	<stdio.h>
+	<locale.h>
 	"funcoesPrincipais.h"
 
 1673543816 c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\funcoesprincipais.h
@@ -118,15 +119,16 @@
 
 1673482772 c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\constantes.h
 
-1673535526 source:c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\funcoesauxiliares.c
+1673544138 source:c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\funcoesauxiliares.c
 	<stdlib.h>
 	<ctype.h>
 	<stdio.h>
 	<string.h>
+	<locale.h>
 	"funcoesAuxiliares.h"
 	"estruturas.h"
 
-1673486635 c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\funcoesauxiliares.h
+1673544138 c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\funcoesauxiliares.h
 	"estruturas.h"
 	"constantes.h"
 
@@ -139,7 +141,7 @@
 	"funcoesAuxiliares.h"
 	"funcoesPrincipais.h"
 
-1673543779 source:c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\main.c
+1673544020 source:c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\main.c
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>
