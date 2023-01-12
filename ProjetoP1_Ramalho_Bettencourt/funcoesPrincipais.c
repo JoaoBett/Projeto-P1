@@ -234,7 +234,6 @@ void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
     {
         printf("Digite a identificação do portátil.\n");
         scanf("%d", &idPortatil);
-        for (i=0; i<MAX_PORTATIL; i++){
           if(idPortatil == arrayPc[i].id){
             posicao = procurarPortatil(arrayPc,quantidade,idPortatil);
             printf("Mude a localizacão: ");
@@ -242,7 +241,7 @@ void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
           }else{
             printf("O id indicado nao corresponde a nenhum portatil...");
           }
-        }
+
     }
     pressionarContinuar();
 }
