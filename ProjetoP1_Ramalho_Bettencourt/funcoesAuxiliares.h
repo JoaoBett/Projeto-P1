@@ -16,5 +16,6 @@ float lerFloat(char mensagem[MAX_STRING], float minimo, float maximo);
 void lerString(char mensagem[MAX_STRING], char vetorCaracteres[MAX_STRING], int maximoCaracteres);
 tipoData lerData();
 void limpaBufferStdin(void);
+void pressionarContinuar();
 
 #endif // FUNCOES_AUXILIARES_H

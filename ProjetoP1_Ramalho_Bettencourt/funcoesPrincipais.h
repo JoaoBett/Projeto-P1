@@ -21,4 +21,5 @@ void registarReparacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisic
 
 
 
+
 #endif // FUNCOES_PRINCIPAIS_H

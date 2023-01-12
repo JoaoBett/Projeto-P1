@@ -278,4 +278,11 @@ tipoData lerData()
     data.dia = lerInteiro("dia:", 1, maxDiasMes);
     return data;
 }
+void pressionarContinuar()
+{
+    printf("\nPressione qualquer tecla para continuar...");
+    while (!kbhit()) {}
+    limpaBufferStdin();
+    return;
+}
 

@@ -49,6 +49,7 @@ void adicionarPortatil(tipoPc arrayPc[MAX_PORTATIL],int *quantidade)      //Acre
         {
             printf("\n\tEste portatil já está registado, por favor tente novamente...\n\n");
         }
+        pressionarContinuar();
     }
 }
 
@@ -162,7 +163,7 @@ void listarPortatil(tipoPc arrayPc[MAX_PORTATIL], int quantidade)               
             //
         }
     }
-   // pressionarContinuar();
+    pressionarContinuar();
 }
 
 void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisicao arrayReq[MAX_PORTATIL], int *contadorReq)
@@ -190,7 +191,7 @@ void requisitarPortatil(tipoPc arrayPC[MAX_PORTATIL],int* quantidade,tipoRequisi
 
         printf("\nApós 30 dias da requisicao do portatil irá ser cobrada uma multa de 10 euros por dia em excesso.\n");
     }
-//    pressionarContinuar();
+    pressionarContinuar();
 }
 
 void renovarPortatil(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisicao arrayReq[MAX_PORTATIL])
@@ -216,7 +217,7 @@ void renovarPortatil(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisicao
             printf("\n\tEste portátil não existe...\n\n");
         }
     }
- //   pressionarContinuar();
+    pressionarContinuar();
 }
 
 void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
@@ -237,7 +238,7 @@ void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
         arrayPc->localizacao = lerInteiro("Localizacao (0 - Residencias || 1 - Campus 1 || 2 - Campus 2 || 3 - Campus 5)\t",0,3);;
 
     }
-
+    pressionarContinuar();
 }
 
 void listarRequesicao(tipoPc arrayPc[MAX_PORTATEIS], tipoRequisicao arrayReq[MAX_PORTATEIS], int quantidade, int quantidadeReq){
@@ -251,6 +252,7 @@ void listarRequesicao(tipoPc arrayPc[MAX_PORTATEIS], tipoRequisicao arrayReq[MAX
             printf("O portatil %d", arrayReq[i].id, "esta requesitado\n");
         }
     }
+    pressionarContinuar();
 }
 
 void registarAvaria(tipoPc arrayPc[MAX_PORTATEIS], int quantidade){
@@ -276,6 +278,7 @@ void registarAvaria(tipoPc arrayPc[MAX_PORTATEIS], int quantidade){
             printf("\n\tEste portátil não existe...\n\n");
         }
     }
+    pressionarContinuar();
 }
 
 void listarAvaria(tipoPc arrayPc[MAX_PORTATEIS], int quantidade){
@@ -294,6 +297,7 @@ void listarAvaria(tipoPc arrayPc[MAX_PORTATEIS], int quantidade){
     }
 
     printf("Avarias totais: %d", quantidadeAvarias);
+    pressionarContinuar();
 }
 
 void registarReparacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisicao arrayReq[MAX_PORTATIL])
@@ -319,7 +323,7 @@ void registarReparacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade, tipoRequisic
             printf("\n\tEste portátil não existe...\n\n");
         }
     }
- //   pressionarContinuar();
+    pressionarContinuar();
 }
 
 void registarDevolucao(tipoPc arrayPc[MAX_PORTATIL],int quantidade)
@@ -346,7 +350,7 @@ void registarDevolucao(tipoPc arrayPc[MAX_PORTATIL],int quantidade)
             printf("\n\tEste portátil não existe...\n\n");
         }
     }
- //   pressionarContinuar();
+    pressionarContinuar();
 }
 
 void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
@@ -378,4 +382,5 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
         }
 
     }
+    pressionarContinuar();
 }
