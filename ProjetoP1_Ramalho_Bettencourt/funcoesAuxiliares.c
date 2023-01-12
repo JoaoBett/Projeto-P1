@@ -9,7 +9,8 @@
 ///NAO ESQUECER FUNCOES PARA LER PROCESSADOR/RAM/LOCALIZACAO/ESTADO
 
 //FUNCAO MENU
-char menu(int *quantidadePortateis, int *portateisDisponiveis, int *quantidadeRequisicoes, int *quantidadeRequisicoesAtivas){
+char menu(int *quantidadePortateis, int *portateisDisponiveis, int *quantidadeRequisicoes, int *quantidadeRequisicoesAtivas)
+{
     char op;
     printf("================================================| Bem vindo |===========================================================\n");
     printf("============================| GRCP |  Gestao da Requisicao de Computadores Portateis |==================================\n");
@@ -281,6 +282,7 @@ tipoData lerData()
     data.dia = lerInteiro("dia:", 1, maxDiasMes);
     return data;
 }
+
 void pressionarContinuar()
 {
     printf("\nPressione qualquer tecla para continuar...");
@@ -288,7 +290,26 @@ void pressionarContinuar()
     limpaBufferStdin();
     return;
 }
+
 void limpaEcra()
 {
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+}
+
+int verificaMenor(int primeira,int segunda, int terceira)
+{
+    int menor = primeira;
+    if(segunda < primeira)
+    {
+        menor = segunda;
+    }
+    if(terceira < primeira)
+    {
+        menor = terceira;
+    }
+    if(primeira == segunda)
+    {
+
+    }
+    return menor;
 }

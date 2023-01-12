@@ -118,7 +118,7 @@
 
 1673482772 c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\constantes.h
 
-1673484229 source:c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\funcoesauxiliares.c
+1673488182 source:c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\funcoesauxiliares.c
 	<stdlib.h>
 	<ctype.h>
 	<stdio.h>
@@ -126,11 +126,11 @@
 	"funcoesAuxiliares.h"
 	"estruturas.h"
 
-1673484205 c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\funcoesauxiliares.h
+1673486635 c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\funcoesauxiliares.h
 	"estruturas.h"
 	"constantes.h"
 
-1673484521 source:c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\funcoesprincipais.c
+1673486714 source:c:\users\joão bettencourt\documents\github\projeto-p1\projetop1_ramalho_bettencourt\funcoesprincipais.c
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>

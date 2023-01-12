@@ -355,6 +355,7 @@ void registarDevolucao(tipoPc arrayPc[MAX_PORTATIL],int quantidade)
 
 void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
     int i = 0;
+    //Processadores
     int qnt = 0;
     int contadorI3 = 0;
     int contadorI5 = 0;
@@ -362,25 +363,120 @@ void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS]){
     float processadorI3 = 0.0;
     float processadorI5 = 0.0;
     float processadorI7 = 0.0;
+    //Utentes
+    int qnt2 = 0;
+    int contadorEst = 0;
+    int contadorDoc = 0;
+    int contadorTecA = 0;
+    int menor;
+    int menorUtente;
+    int menorAux;
+
     for (i=0; i<MAX_PORTATEIS; i++){
       qnt++;                               //(0 - i3 || 1 - i5 || 2 - i7)
         if (arrayPc[i].processador == 0){
             contadorI3++;
-            processadorI3 = contadorI3/qnt;
         }
         else{
             if(arrayPc[i].processador == 1){
                 contadorI5++;
-                processadorI5 = contadorI5/qnt;
             }
             else{
             if(arrayPc[i].processador == 2){
                 contadorI7++;
-                processadorI7 = contadorI7/qnt;
             }
         }
         }
-
     }
-    pressionarContinuar();
+    //Medias dos Processadores
+    processadorI3 = (contadorI3/qnt)*100;
+    processadorI5 = (contadorI5/qnt)*100;
+    processadorI7 = (contadorI7/qnt)*100;
+    printf("A percentagem de processadores I3 presentes é de %f.\n",processadorI3);
+    printf("A percentagem de processadores I5 presentes é de %f.\n",processadorI5);
+    printf("A percentagem de processadores I7 presentes é de %f.\n",processadorI7);
+
+    for (i = 0;i<MAX_PORTATEIS; i++)
+    {
+    qnt2++;
+       if (arrayPc[i].tipoUtente == 0)
+        {
+           contadorEst++;
+       }
+       else{
+            if(arrayPc[i].tipoUtente == 1)
+            {
+           contadorDoc++;
+            }
+            else{
+                if(arrayPc[i].tipoUtente == 2)
+                {
+                  contadorTecA++;
+                }
+            }
+        }
+    }
+
+    //tipo de utente com a menor quantidade de requisições
+    menor = contadorDoc;
+    menorAux = 1;
+    if (contadorTecA < menor)
+    {
+    menor = contadorTecA;
+    menorAux = 2;
+    }
+    if (contadorEst < menor)
+    {
+    menor = contadorEst;
+    menorAux = 0;
+    }
+
+    menorUtente = 0;
+    if (contadorDoc == contadorEst && contadorDoc == contadorTecA) {
+        menorUtente = menor/qnt2;
+        menorAux = 6;
+    }
+    else
+    {
+        if (contadorDoc == contadorEst)
+        {
+        contadorDoc = menor;
+        menorUtente = menor/qnt2;
+        menorAux = 3;
+        }
+        else
+        {
+            if (contadorDoc == contadorTecA)
+            {
+            contadorDoc = menor;
+            menorUtente = menor/qnt2;
+            menorAux = 5;
+            }
+            else{
+                if(contadorEst == contadorTecA)
+                {
+                    contadorEst = menor;
+                    menorUtente = menor/qnt2;
+                    menorAux = 4;
+                }
+            }
+        }
+    }
+    switch(menorAux)
+    {
+        case 0:
+            printf("O tipo de utente com a menor quantidade de requisições efetuadas e o Estudante.");
+        case 1:
+            printf("O tipo de utente com a menor quantidade de requisições efetuadas e o Docente.");
+        case 2:
+            printf("O tipo de utente com a menor quantidade de requisições efetuadas e o Tecnico Administrativo.");
+        case 3:
+            printf("O tipo de utente com a menor quantidade de requisições efetuadas sao os Estudantes e Docentes.");
+        case 4:
+            printf("O tipo de utente com a menor quantidade de requisições efetuadas sao os Estudantes e os Tecnicos Administrativos.");
+        case 5:
+            printf("O tipo de utente com a menor quantidade de requisições efetuadas sao os Docentes e Tecnicos Administrativos.");
+        case 6:
+            printf("O tipo de utente com a menor quantidade de requisições efetuadas são todos.");
+    }
 }
