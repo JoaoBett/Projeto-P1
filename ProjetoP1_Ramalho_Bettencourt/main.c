@@ -12,7 +12,6 @@ int main()
     int quantidadeRequesicoes = 0;
     int quantidadeRequesicoesAtivas = 0;
     int quantidadeAvarias = 0;
-    int reqAtivas = 0;
 
     tipoPc portateis[MAX_PORTATEIS];
     tipoRequisicao arrayReq[MAX_PORTATEIS];
@@ -20,7 +19,7 @@ int main()
     char op;
 
     do{
-      op = menu(&quantidadePortateis, &portateisDisponiveis, &quantidadeRequesicoes, &reqAtivas);
+      op = menu(&quantidadePortateis, &portateisDisponiveis, &quantidadeRequesicoes, &quantidadeRequesicoesAtivas);
       limpaBufferStdin();
         switch(op){
         case 'A'://adicionar portatil
@@ -33,7 +32,7 @@ int main()
             alterarLocalizacao(portateis, quantidadePortateis);
             break;
         case 'D'://requisitar um portatil
-            requisitarPortatil(portateis, &quantidadePortateis, arrayReq, &quantidadeRequesicoes, &reqAtivas);
+            requisitarPortatil(portateis, &quantidadePortateis, arrayReq, &quantidadeRequesicoes);
             break;
         case 'E'://renovar requisicao
             renovarPortatil(portateis,quantidadePortateis,arrayReq);
@@ -50,7 +49,7 @@ int main()
             listarAvaria(portateis,quantidadePortateis);
             break;
         case 'J'://registar devolucao
-            registarDevolucao(portateis,quantidadePortateis, &reqAtivas);
+            registarDevolucao(portateis,quantidadePortateis);
             break;
         case 'K'://registar reparacao
             registarReparacao(portateis, quantidadePortateis, arrayReq);
