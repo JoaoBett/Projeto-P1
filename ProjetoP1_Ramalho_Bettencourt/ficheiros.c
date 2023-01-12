@@ -3,17 +3,19 @@
 
 #include "funcoesPrincipais.h"
 
-void gravarFicheiroBinario(tipoPc portateis[MAX_PORTATIL], int quantidadePortateis, tipoRequisicao* requesicao, int quantidadeRequesicoes) {
-    FILE* file;
+void gravarFicheiroBinario(tipoPc portateis[MAX_PORTATIL], int quantidadePortateis, tipoRequisicao* requisicao, int quantidadeRequisicoes) {
+    FILE *file;
 
     file = fopen("dados.dat", "wb");
 
     if(file != NULL) {
             fwrite(&quantidadePortateis, sizeof(int), 1, file);
+            fwrite(&quantidadeRequisicoes,sizeof(int),1,file);
+            fwrite(requisicao,sizeof(int),1,file);
             fwrite(portateis, sizeof(tipoPc), quantidadePortateis, file);
             fclose(file);
     } else {
-        printf("\nImpossivel abrir o file ya\n\n");
+        printf("\nERRO AO ABRIR O FICHEIRO\n\n");
     }
 }
 

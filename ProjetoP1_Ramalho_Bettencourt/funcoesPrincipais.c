@@ -402,6 +402,36 @@ void registarDevolucao(tipoPc arrayPc[MAX_PORTATIL],int quantidade,int *reqAtiva
                 printf("Devolucao registada no campus 3...");
                 break;
                 }
+                switch(arrayPc[posicao].processador)
+                {
+                case 0:
+                    printf("O Processador do seu portátil era um I3...");
+                    break;
+                case 1:
+                    printf("O Processador do seu portátil era um I5...");
+                    break;
+                case 2:
+                    printf("O Processador do seu portátil era um I7...");
+                    break;
+                }
+                switch(arrayPc[posicao].ram)
+                {
+                case 0:
+                    printf("A RAM do seu portatil era de 4GB...");
+                    break;
+                case 1:
+                    printf("A RAM do seu portatil era de 8GB...");
+                    break;
+                case 2:
+                    printf("A RAM do seu portatil era de 16GB...");
+                    break;
+                case 3:
+                    printf("A RAM do seu portatil era de 32GB...");
+                    break;
+                case 4:
+                    printf("A RAM do seu portatil era de 64GB...");
+                    break;
+                }
                 arrayPc[posicao].estado = 0;
             }
         (*reqAtivas)--;
@@ -415,7 +445,7 @@ void registarDevolucao(tipoPc arrayPc[MAX_PORTATIL],int quantidade,int *reqAtiva
 }
 
 void dadosEstatisticos(tipoPc arrayPc[MAX_PORTATEIS],int quantidade, int quantidadeReq){
-int i = 0;
+    int i = 0;
     //Processadores
     int qnt = 0;
     int contadorI3 = 0;

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 #include "funcoesAuxiliares.h"
 #include "funcoesPrincipais.h"
@@ -9,7 +10,7 @@ int main()
 {
     int quantidadePortateis = 0;
     int portateisDisponiveis = 0;
-    int quantidadeRequesicoes = 0;
+    int quantidadeRequisicoes = 0;
     int quantidadeRequesicoesAtivas = 0;
     int quantidadeAvarias = 0;
     int reqAtivas = 0;
@@ -17,10 +18,14 @@ int main()
     tipoPc portateis[MAX_PORTATEIS];
     tipoRequisicao arrayReq[MAX_PORTATEIS];
 
+    setlocale(LC_ALL,"");
+
+    //lerFicheiroBinario();
+
     char op;
 
     do{
-      op = menu(&quantidadePortateis, &portateisDisponiveis, &quantidadeRequesicoes, &reqAtivas);
+      op = menu(&quantidadePortateis, &portateisDisponiveis, &quantidadeRequisicoes, &reqAtivas);
       limpaBufferStdin();
         switch(op){
         case 'A'://adicionar portatil
@@ -33,13 +38,13 @@ int main()
             alterarLocalizacao(portateis, quantidadePortateis);
             break;
         case 'D'://requisitar um portatil
-            requisitarPortatil(portateis, &quantidadePortateis, arrayReq, &quantidadeRequesicoes, &reqAtivas);
+            requisitarPortatil(portateis, &quantidadePortateis, arrayReq, &quantidadeRequisicoes, &reqAtivas);
             break;
         case 'E'://renovar requisicao
             renovarPortatil(portateis,quantidadePortateis,arrayReq);
             break;
         case 'F'://listar requisicoes
-            listarRequisicao(portateis,arrayReq,quantidadePortateis,quantidadeRequesicoes);
+            listarRequisicao(portateis,arrayReq,quantidadePortateis,quantidadeRequisicoes);
             break;
         case 'G'://informacao de uma requisicao
             break;
@@ -56,13 +61,14 @@ int main()
             registarReparacao(portateis, quantidadePortateis, arrayReq);
             break;
         case 'L'://Armazenar informação portateis e requisicoes em ficheiro binario
-            gravarFicheiroBinario(portateis, quantidadePortateis, arrayReq, quantidadeRequesicoes);
+            gravarFicheiroBinario(portateis, quantidadePortateis, arrayReq, quantidadeRequisicoes);
             break;
         case 'M'://Mostrar (ler) dados armazenados em ficheiro binarios
-            quantidadeAvarias=leFicheiroBinario(portateis);
+            quantidadeAvarias = leFicheiroBinario(portateis);
             break;
         case 'N'://dados estatisticos
-            dadosEstatisticos(portateis,quantidadePortateis);
+            //dadosEstatisticos(portateis,quantidadePortateis);
+            dadosEstatisticos(portateis,quantidadePortateis,quantidadeRequisicoes);
             break;
         case 'S':// SAIR
             printf("A sair.......");
