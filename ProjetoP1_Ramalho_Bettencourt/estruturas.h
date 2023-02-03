@@ -20,18 +20,20 @@ typedef struct{
     int quantAvarias;
     int diasRequi;
     int quantRequisicoes;
+    int tipoAvarias;
 }tipoPc;
 
 typedef struct{
     char cod[5];
     int id;
     char nomeUtente[MAX_STRING];
-    int tipoUtente; //ENUM 0-estudante 1-docente  2-técnico administrativo
+    int tipoUtente; //ENUM 0-estudante 1-docente  2-tï¿½cnico administrativo
     tipoData dataRequisicao;
     int prazo; //if(prazo <= 30) TA CERTO else ERRADO
     int estadoRequisicao; //ENUM 0-ativa 1-concluida
     int localDevolucao; //ENUM  0- residencias 1- campus1 2- campus2 3-campus5
     float multa;
+    tipoData dataDevolucao;
 }tipoRequisicao;
 
 #endif // ESTRUTURAS_H
