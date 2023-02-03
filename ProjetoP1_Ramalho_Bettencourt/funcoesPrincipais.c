@@ -3,7 +3,6 @@
 #include <locale.h>
 #include <ctype.h>
 #include <string.h>
-//#include <locale.h>
 
 #include "funcoesAuxiliares.h"
 #include "funcoesPrincipais.h"
@@ -235,10 +234,11 @@ void alterarLocalizacao(tipoPc arrayPc[MAX_PORTATIL],int quantidade){
     }
     else
     {
-          if(idPortatil == arrayPc[i].id){
-            posicao = procurarPortatil(arrayPc,quantidade,0);
+
+        posicao = procurarPortatil(arrayPc,quantidade,0);
+          if(idPortatil == arrayPc[i].id){ //confirma se o id existe.....
             printf("Mude a localizacão: ");
-            arrayPc->localizacao = lerInteiro("Localizacao (0 - Residencias || 1 - Campus 1 || 2 - Campus 2 || 3 - Campus 5)\t",0,3);
+            arrayPc->localizacao = lerInteiro("Localizacao (0 - Residencias  1 - Campus 1  2 - Campus 2 || 3 - Campus 5)\t",0,3);
           }else{
             printf("O id indicado nao corresponde a nenhum portatil...");
           }
