@@ -33,6 +33,7 @@ typedef struct{
     int estadoRequisicao; //ENUM 0-ativa 1-concluida
     int localDevolucao; //ENUM  0- residencias 1- campus1 2- campus2 3-campus5
     float multa;
+    tipoData dataDevolucao;
 }tipoRequisicao;
 
 #endif // ESTRUTURAS_H
