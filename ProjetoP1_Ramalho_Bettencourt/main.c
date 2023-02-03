@@ -60,14 +60,13 @@ int main()
         case 'K'://registar reparacao
             registarReparacao(portateis, quantidadePortateis, arrayReq);
             break;
-        case 'L'://Armazenar informação portateis e requisicoes em ficheiro binario
+        case 'L'://Armazenar informaÃ§Ã£o portateis e requisicoes em ficheiro binario
             gravarFicheiroBinario(portateis, quantidadePortateis, arrayReq, quantidadeRequisicoes);
             break;
         case 'M'://Mostrar (ler) dados armazenados em ficheiro binarios
             quantidadeAvarias = leFicheiroBinario(portateis);
             break;
         case 'N'://dados estatisticos
-            //dadosEstatisticos(portateis,quantidadePortateis);
             dadosEstatisticos(portateis,quantidadePortateis,quantidadeRequisicoes);
             break;
         case 'S':// SAIR
